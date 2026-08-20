@@ -1,0 +1,398 @@
+.admin-root {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-topbar__title {
+  font-family: var(--display-font);
+  font-size: 26px;
+  letter-spacing: 0.03em;
+}
+
+.admin-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  max-width: 420px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #00000066;
+}
+
+.admin-search input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 13px;
+}
+
+.admin-search i {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+.admin-btn-primary {
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #14171e;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.admin-btn-secondary {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.admin-btn-text {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ---------- Titles list ---------- */
+.title-list {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.title-row:hover {
+  background: #ffffff0a;
+}
+
+.title-row__poster {
+  width: 40px;
+  height: 56px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: var(--panel-solid);
+  flex-shrink: 0;
+}
+
+.title-row__name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.title-row__meta {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.title-row__spacer {
+  flex: 1;
+}
+
+/* ---------- Kebab menu ---------- */
+.kebab {
+  position: relative;
+}
+
+.kebab__trigger {
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--text-dim);
+}
+
+.kebab__trigger:hover {
+  background: #ffffff14;
+  color: var(--text);
+}
+
+.kebab__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 150px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px;
+  z-index: 30;
+}
+
+.kebab__menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.kebab__menu button:hover {
+  background: #ffffff14;
+}
+
+.kebab__menu button.danger {
+  color: #ff6b6b;
+}
+
+/* ---------- Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #00000099;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--panel-solid);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-solid);
+  font-family: var(--display-font);
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  z-index: 2;
+}
+
+.modal-header button {
+  color: var(--text-dim);
+  font-size: 18px;
+}
+
+.modal-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.field-label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.field-input,
+.field-textarea,
+.field-select {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #00000066;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+/* ---------- Autocomplete ---------- */
+.autocomplete {
+  position: relative;
+}
+
+.autocomplete__list {
+  margin-top: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #00000040;
+}
+
+.autocomplete__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.autocomplete__item:hover {
+  background: #ffffff14;
+}
+
+.autocomplete__item img {
+  width: 26px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ---------- Related panel ---------- */
+.related-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.related-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff0d;
+  font-size: 12px;
+  cursor: grab;
+}
+
+.related-chip img {
+  width: 18px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* ---------- Seasons strip ---------- */
+.seasons-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.season-chip {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dim);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.season-chip.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.season-chip-add {
+  flex-shrink: 0;
+  width: 44px;
+  border-radius: 10px;
+  border: 1px dashed var(--line);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.season-settings {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Episodes list (admin) ---------- */
+.episode-admin-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  margin-bottom: 8px;
+}
+
+.episode-admin-row__poster {
+  width: 64px;
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #000;
+  flex-shrink: 0;
+}
+
+.episode-admin-row__number {
+  font-family: var(--mono-font);
+  font-size: 12px;
+  color: var(--text-dim);
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.episode-admin-row__name {
+  flex: 1;
+  font-size: 13px;
+}
+
+/* ---------- Repeatable source/subtitle rows ---------- */
+.repeat-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+
+.repeat-row > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.repeat-row-remove {
+  padding: 9px 11px;
+  border-radius: 8px;
+  border: 1px solid #ff6b6b55;
+  color: #ff6b6b;
+  flex-shrink: 0;
+}
