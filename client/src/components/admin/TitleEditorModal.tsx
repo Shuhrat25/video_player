@@ -74,7 +74,6 @@ export default function TitleEditorModal({ titleId, onClose, onSaved }: TitleEdi
     if (full.seasons[0]) setActiveSeasonId(full.seasons[0].id);
   }
 
-  // ---- Автокомплит по названию (только пока тайтл ещё не выбран/создан) ----
   useEffect(() => {
     if (savedId || !name.trim()) {
       setNameSuggestions([]);
@@ -116,7 +115,6 @@ export default function TitleEditorModal({ titleId, onClose, onSaved }: TitleEdi
     onSaved();
   }
 
-  // ---- Related ----
   useEffect(() => {
     if (!relatedQuery.trim()) {
       setRelatedSuggestions([]);
