@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api, adminResource } from "../../api/client";
-import type { VideoQuality } from "../../api/types";
+import type { VideoQuality, EpisodeSummary } from "../../api/types";
 import MediaUrlInput from "./MediaUrlInput";
 
 interface EpisodeModalProps {
@@ -105,7 +105,7 @@ export default function EpisodeModal({ seasonId, episodeId, defaultNumber, onClo
         await Promise.all(existing.sources.map((s) => adminResource("video-sources").remove(s.id)));
         await Promise.all(existing.subtitles.map((s) => adminResource("subtitles").remove(s.id)));
       } else {
-        const created = await adminResource<{ id: number }>("episodes").create(payload);
+        const created = await adminResource<EpisodeSummary>("episodes").create(payload);
         epId = created.id;
       }
 
