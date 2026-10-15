@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/((?!assets/|demo/).*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://video-player-api-rjdt.onrender.com/api/:path*" },
+    { "source": "/((?!assets/|demo/).*)", "destination": "/index.html" }
+  ]
 }
