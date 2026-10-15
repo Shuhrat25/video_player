@@ -1,8 +1,14 @@
 # Video Player — каталог и видеоплеер
 
-Full-stack прототип видеокаталога с собственным плеером, backend API и административной панелью. Демонстрирует управление сезонами и сериями, источниками видео и настройками воспроизведения.
+Незавершённый full-stack прототип видеокаталога с собственным плеером, backend API и административной панелью. Демонстрирует управление сезонами и сериями, источниками видео и настройками воспроизведения.
 
 Стек: **React + TypeScript** на фронте, **Express + TypeScript + Drizzle ORM + PostgreSQL** на бэке.
+
+[Открыть демо](https://video-player-sandy-delta.vercel.app/) · [Пример воспроизведения](https://video-player-sandy-delta.vercel.app/title/1)
+
+Публичная демонстрация: каталог и собственный восьмисекундный тестовый ролик. Проект находится в разработке; наличие демо не означает завершённость всех функций. Бесплатный backend Render может запускаться с задержкой после простоя.
+
+![Демонстрация плеера](docs/screenshots/player.jpg)
 
 ---
 
@@ -51,7 +57,7 @@ Full-stack прототип видеокаталога с собственным
 cd server
 cp .env.example .env      # укажи DATABASE_URL, JWT_SECRET, ADMIN_EMAIL/ADMIN_PASSWORD
 npm install
-npm run db:push           # накатить схему
+npm run db:migrate        # применить версионированную схему
 npm run seed:admin        # создать первого администратора
 npm run dev                # http://localhost:4000
 ```
@@ -81,7 +87,7 @@ anime-player/
       components/
         player/    видеоплеер и всё его окружение
         admin/     админ-панель
-        auth/      общий логин сайта
+        auth/      вход в административную панель
       api/         типы + fetch-клиент
       lib/         прогресс просмотра, настройки плеера (localStorage)
 ```
